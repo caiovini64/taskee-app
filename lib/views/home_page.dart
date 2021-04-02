@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gradient_ui_widgets/buttons/gradient_floating_action_button.dart';
+import 'package:gradient_ui_widgets/gradient_ui_widgets.dart';
+import 'package:taskee/components/task_form_field.dart';
+
 import 'package:taskee/components/task_list.dart';
 
 class HomePage extends StatelessWidget {
@@ -21,7 +25,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 80.0, bottom: 60.0),
+              padding: const EdgeInsets.only(top: 80.0, bottom: 30.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -32,6 +36,7 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
+            TaskFormField(),
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
