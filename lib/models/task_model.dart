@@ -1,4 +1,6 @@
-class TaskModel {
+import 'package:flutter/cupertino.dart';
+
+class TaskModel with ChangeNotifier {
   final String id;
   final String title;
   bool isChecked;
@@ -8,4 +10,9 @@ class TaskModel {
     required this.title,
     required this.isChecked,
   });
+
+  void toggleCheck() {
+    isChecked = !isChecked;
+    notifyListeners();
+  }
 }
