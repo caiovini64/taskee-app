@@ -15,11 +15,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         dividerColor: Color(0xffDFE3E7),
         primaryColor: Color(0xff4B3589),
-        primaryColorLight: Color(0x0F54A6),
+        primaryColorLight: Color(0xfF6FB8FC),
         textTheme: TextTheme(
           headline1: GoogleFonts.raleway(
             color: Colors.white,
             fontWeight: FontWeight.bold,
+            fontSize: 20,
           ),
           headline2: GoogleFonts.raleway(
             color: Colors.white,
