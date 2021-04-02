@@ -20,17 +20,10 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 80.0, bottom: 80.0),
+              padding: const EdgeInsets.only(top: 80.0, bottom: 60.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
-                    Icons.check_circle_sharp,
-                    color: Colors.white,
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
                   Text(
                     'Taskee',
                     style: Theme.of(context).textTheme.headline1,
