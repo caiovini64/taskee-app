@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:taskee/models/task_model.dart';
-import 'package:taskee/provider/task_provider.dart';
+import 'package:taskee/components/task_list.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final task = Provider.of<TaskProvider>(context);
-    final taskList = task.items;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -45,10 +41,7 @@ class HomePage extends StatelessWidget {
                     topRight: Radius.circular(40),
                   ),
                 ),
-                child: ListView.builder(
-                  itemCount: taskList.length,
-                  itemBuilder: (context, i) => Text(taskList[i].title),
-                ),
+                child: TaskList(),
               ),
             ),
           ],

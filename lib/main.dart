@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
           dividerColor: Color(0xffDFE3E7),
           primaryColor: Color(0xff4B3589),
           primaryColorLight: Color(0xfF6FB8FC),
+          disabledColor: Color(0xffDFE3E7),
           textTheme: TextTheme(
             headline1: GoogleFonts.majorMonoDisplay(
               color: Colors.white,
@@ -28,8 +29,9 @@ class MyApp extends StatelessWidget {
               fontSize: 20,
             ),
             headline2: GoogleFonts.raleway(
-              color: Colors.white,
+              color: Colors.black,
               fontWeight: FontWeight.w700,
+              fontSize: 14,
             ),
           ),
         ),
