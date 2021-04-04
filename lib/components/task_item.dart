@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:outline_gradient_button/outline_gradient_button.dart';
 import 'package:provider/provider.dart';
-import 'package:taskee/models/task_model.dart';
+import 'package:taskee/provider/task_model.dart';
+import 'package:taskee/provider/task_provider.dart';
 
 class TaskItem extends StatelessWidget {
   @override
@@ -15,9 +16,11 @@ class TaskItem extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
           child: Dismissible(
-            onDismissed: null,
+            onDismissed: (_) {
+              Provider.of<TaskProvider>(context).deleteItem(task.id);
+            },
             direction: DismissDirection.startToEnd,
-            key: Key(DateTime.now().millisecondsSinceEpoch.toString()),
+            key: UniqueKey(),
             background: Container(
               decoration: BoxDecoration(
                 color: Colors.red,

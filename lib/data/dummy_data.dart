@@ -1,4 +1,4 @@
-import 'package:taskee/models/task_model.dart';
+import 'package:taskee/provider/task_model.dart';
 
 // ignore: non_constant_identifier_names
 final DUMMY_DATA = [
