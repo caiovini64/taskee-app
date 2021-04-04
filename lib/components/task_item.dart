@@ -16,9 +16,7 @@ class TaskItem extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
           child: Dismissible(
-            onDismissed: (_) {
-              Provider.of<TaskProvider>(context).deleteItem(task.id);
-            },
+            onDismissed: (_) {},
             direction: DismissDirection.startToEnd,
             key: UniqueKey(),
             background: Container(
