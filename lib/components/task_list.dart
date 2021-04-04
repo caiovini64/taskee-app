@@ -10,8 +10,8 @@ class TaskList extends StatelessWidget {
     final taskList = task.items;
     return ListView.builder(
       itemCount: taskList.length,
-      itemBuilder: (context, i) => ChangeNotifierProvider(
-        create: (ctx) => taskList[i],
+      itemBuilder: (context, i) => ChangeNotifierProvider.value(
+        value: taskList[i],
         child: TaskItem(),
       ),
     );
