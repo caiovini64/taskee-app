@@ -20,7 +20,7 @@ class TaskFormField extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white.withOpacity(0.2),
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(5),
         ),
         child: Padding(
           padding:

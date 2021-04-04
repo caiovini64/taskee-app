@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
               fontSize: 20,
             ),
             headline2: GoogleFonts.raleway(
-              color: Colors.black,
+              color: Color(0xff424242),
               fontWeight: FontWeight.w700,
               fontSize: 14,
             ),
