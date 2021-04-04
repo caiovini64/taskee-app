@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gradient_ui_widgets/buttons/gradient_floating_action_button.dart';
-import 'package:gradient_ui_widgets/gradient_ui_widgets.dart';
 import 'package:taskee/components/task_form_field.dart';
 
 import 'package:taskee/components/task_list.dart';
