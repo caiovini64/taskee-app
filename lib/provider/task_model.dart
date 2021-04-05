@@ -1,12 +1,13 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 
 class TaskModel with ChangeNotifier {
-  final String id;
+  final String id = Random().nextDouble().toString();
   final String title;
   bool isChecked;
 
   TaskModel({
-    required this.id,
     required this.title,
     required this.isChecked,
   });

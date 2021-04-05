@@ -6,7 +6,7 @@ import 'package:taskee/provider/task_provider.dart';
 class TaskList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final task = Provider.of<TaskProvider>(context);
+    final task = Provider.of<TaskProvider>(context, listen: true);
     final taskList = task.items;
     return ListView.builder(
       itemCount: taskList.length,

@@ -7,7 +7,6 @@ import 'package:taskee/provider/task_provider.dart';
 class TaskItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final TaskModel task = Provider.of<TaskModel>(context, listen: false);
     return Consumer<TaskModel>(
       builder: (ctx, task, __) => GestureDetector(
         onTap: () {
@@ -16,7 +15,9 @@ class TaskItem extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
           child: Dismissible(
-            onDismissed: (_) {},
+            onDismissed: (_) {
+              Provider.of<TaskProvider>(context, listen: false).remove(task.id);
+            },
             direction: DismissDirection.startToEnd,
             key: UniqueKey(),
             background: Container(
