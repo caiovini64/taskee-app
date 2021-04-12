@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:taskee/provider/task_model.dart';
@@ -8,7 +6,6 @@ import 'package:taskee/provider/task_provider.dart';
 class TaskFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    GlobalKey<FormState> globalFormKey = new GlobalKey<FormState>();
     final taskTitleController = TextEditingController();
 
     return Padding(
@@ -41,7 +38,6 @@ class TaskFormField extends StatelessWidget {
                 onPressed: () {
                   Provider.of<TaskProvider>(context, listen: false)
                       .addItem(TaskModel(
-                    id: Random().nextDouble().toString(),
                     title: taskTitleController.text,
                     isChecked: false,
                   ));
