@@ -32,7 +32,7 @@ dependencies:
   provider: 
   outline_gradient_button: ^2.0.0+1
   gradient_ui_widgets: ^1.0.2-nullsafety
-  
+  http:
 
 dev_dependencies:
   flutter_test:
