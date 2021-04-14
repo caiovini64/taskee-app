@@ -15,6 +15,28 @@ class TaskItem extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
           child: Dismissible(
+            confirmDismiss: (_) async {
+              return showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: Text('Excluir tarefa?'),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop(false);
+                      },
+                      child: Text('Cancelar'),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop(true);
+                      },
+                      child: Text('Ok'),
+                    ),
+                  ],
+                ),
+              );
+            },
             onDismissed: (_) {
               Provider.of<TaskProvider>(context, listen: false).remove(task.id);
             },
