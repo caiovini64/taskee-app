@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:taskee/provider/task_provider.dart';
-import 'views/home_page.dart';
+import 'pages/home_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 

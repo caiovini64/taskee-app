@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:taskee/components/task_form_field.dart';
+import 'package:taskee/widgets/task_form_field.dart';
 
-import 'package:taskee/components/task_list.dart';
+import 'package:taskee/widgets/task_list.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //Degradê fundo
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(

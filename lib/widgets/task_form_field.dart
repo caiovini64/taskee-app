@@ -2,15 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:taskee/provider/task_model.dart';
 import 'package:taskee/provider/task_provider.dart';
+import 'package:taskee/utils/layout_utils.dart';
 
 class TaskFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    LayoutUtils _layoutUtil = LayoutUtils(context);
+
     final taskTitleController = TextEditingController();
 
     return Padding(
       padding: const EdgeInsets.only(left: 16, right: 16, top: 20, bottom: 30),
       child: Container(
+        width: _layoutUtil.resizeWidget(400),
         decoration: BoxDecoration(
           color: Colors.white.withOpacity(0.2),
           borderRadius: BorderRadius.circular(5),
