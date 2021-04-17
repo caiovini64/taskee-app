@@ -46,17 +46,11 @@ class TaskItem extends StatelessWidget {
               },
               direction: DismissDirection.startToEnd,
               key: UniqueKey(),
-              background: Container(
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                child: Align(
-                  alignment: Alignment(-0.9, 0.0),
-                  child: Icon(
-                    Icons.delete,
-                    color: Colors.white,
-                  ),
+              background: Align(
+                alignment: Alignment(-0.9, 0.0),
+                child: Icon(
+                  Icons.delete,
+                  color: Colors.redAccent,
                 ),
               ),
               child: OutlineGradientButton(

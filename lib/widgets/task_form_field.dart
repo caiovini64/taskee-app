@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:taskee/provider/task_model.dart';
@@ -42,6 +44,7 @@ class TaskFormField extends StatelessWidget {
                 onPressed: () {
                   Provider.of<TaskProvider>(context, listen: false)
                       .addItem(TaskModel(
+                    id: Random().nextDouble().toString(),
                     title: taskTitleController.text,
                     isChecked: false,
                   ));
