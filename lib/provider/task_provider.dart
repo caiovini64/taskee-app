@@ -9,7 +9,7 @@ class TaskProvider with ChangeNotifier {
   List<TaskModel> get items => [..._items];
 
   Future<void> loadItems() async {
-    http.Response response = await http.get(Uri.parse(url));
+    http.Response response = await http.get(Uri.parse('$url.json'));
     Map<String, dynamic> data = json.decode(response.body);
     data.forEach((id, data) {
       _items.add(TaskModel(
@@ -19,11 +19,12 @@ class TaskProvider with ChangeNotifier {
       ));
     });
     notifyListeners();
+    return Future.value();
   }
 
   void addItem(TaskModel task) async {
     await http.post(
-      Uri.parse(url),
+      Uri.parse('$url.json'),
       body: json.encode({
         'id': task.id,
         'title': task.title,
@@ -34,11 +35,17 @@ class TaskProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void remove(String id) {
+  void remove(String id) async {
     final index = _items.indexWhere((task) => task.id == id);
     if (index >= 0) {
-      _items.removeWhere((task) => task.id == id);
-      notifyListeners();
+      final task = _items[index];
+
+      final response = await http.delete(Uri.parse('$url/${task.id}.json'));
+
+      if (response.statusCode < 400) {
+        _items.remove(task);
+        notifyListeners();
+      }
     }
   }
 }
